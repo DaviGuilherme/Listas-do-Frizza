@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13</title>
+</head>
+<body>
+    Quantas xícaras de café com leite você já tomou na vida ? <br>
+    <input type="number" id="ipt_xicara"><br>
+    <button onclick="ver()">Ver a quantidade</button><br>
+    <div id="msg"></div>
+    
+
+</body>
+</html>
+<script>
+    function ver() {
+        var xicaras = Number(ipt_xicara.value);
+        msg.innerHTML = ``;
+        for (var i = 1; i <= xicaras; i++) {
+            msg.innerHTML += `
+    <img  style="height: 100px;width: 100px;" src="https://media.istockphoto.com/photos/powdered-milk-in-wooden-spoon-over-white-background-picture-id470819058">
+    <img  style="height: 100px;width: 100px;" src="https://thumbs.dreamstime.com/z/colher-do-caf%C3%A9-18335580.jpg">
+    <img  style="height: 100px;width: 100px;" src="https://thumbs.dreamstime.com/z/colher-do-caf%C3%A9-18335580.jpg">
+    `;
+        }
+    }
+</script>

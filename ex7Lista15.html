@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7</title>
+</head>
+<body>
+    Entre com o limite superior: <br>
+    <input type="text" id="ipt_superior"><br>
+    <button onclick="contar()">Contar</button> <br>
+    <div id="msg"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        var superior = Number(ipt_superior.value);
+
+        if (superior < 100) {
+            for (var i = 5; i <= superior; i++) {
+                msg.innerHTML += `${i}<br>`;
+            }
+        } else {
+            alert('Tem que ser menor que 100')
+        }
+    }
+</script>

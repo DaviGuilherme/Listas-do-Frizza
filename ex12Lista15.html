@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12</title>
+</head>
+<body>
+    Quantas Coca-Colas você ja bebeu na vida ? <br>
+    <input type="number" id="ipt_coca"><br>
+    <button onclick="ver()">Ver a quantidade</button> <br>
+    <div id="msg"></div>
+    
+</body>
+</html>
+<script>
+    function ver() {
+        var cocas = Number(ipt_coca.value);
+        msg.innerHTML = ``;
+        for (var i = 1; i <= cocas; i++) {
+            msg.innerHTML += `<img style="height: 200px;width: 200px;" src="https://rd1.com.br/wp-content/uploads/2022/05/20220524-faustao-band-coca-cola-750x456.jpg">`;
+        }
+    }
+</script>

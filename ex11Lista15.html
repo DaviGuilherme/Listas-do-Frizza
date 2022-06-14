@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+</head>
+<body>
+    Entre com o limite inferior: <br />
+    <input type="number" id="ipt_inferior" /> <br />
+    Entre com limite superior: <br />
+    <input type="number" id="ipt_superior" /> <br />
+    Entre com divisor: <br>
+    <input type="number" id="ipt_divisor"> <br>
+    <button onclick="contar()">Contar</button><br />
+    <h3>Divisiveis</h3>
+    <div id="divisiveis" style="background-color: red;"></div>
+    <h3>Não divisiveis</h3>
+    <div id="nao_divisiveis" style="background-color: blue;"></div>
+</body>
+</html>
+<script>
+    function contar() {
+        var inferior = Number(ipt_inferior.value);
+        var superior = Number(ipt_superior.value);
+        var divisor = Number(ipt_divisor.value);
+        var validacao = true;
+        if (inferior <= 1) {
+            validacao = false;
+            alert('O Limite inferior deve ser maior que 1')
+        }
+        if (superior >= 100) {
+            validacao = false;
+            alert('O Limite superior deve ser menor que 100')
+
+        }
+        if (divisor < 3 || divisor > 10) {
+            validacao = false;
+            alert('O Limite inferior deve estar entre 3 e 10')
+
+        }
+        if (validacao) {
+            divisiveis.innerHTML = ``;
+            nao_divisiveis.innerHTML = ``;
+            for (var i = inferior; i <= superior; i++) {
+                if (i % divisor == 0) {
+                    divisiveis.innerHTML += `${i}<br>`;
+                }
+                else {
+                    nao_divisiveis.innerHTML += `${i}<br>`;
+                }
+            }
+        }
+    }
+    
+    
+</script>
+
