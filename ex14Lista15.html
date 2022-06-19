@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14</title>
+</head>
+
+<body>
+    Quantos depósitos você fez no banco ? <br>
+    <input type="number" id="ipt_qtd_depositos"><br>
+    Qual o valor de cada depósito, sendo que voce sempe deposita o mesmo ? <br>
+    <input type="number" id="ipt_valor"><br>
+    <button onclick="acompanhar()">Acompanhar grana</button>
+    <div id="msg"></div>
+</body>
+
+</html>
+<script>
+    var acumulador = 0;
+    function acompanhar() {
+        msg.innerHTML = ``;
+        var qtd_depositos = Number(ipt_qtd_depositos.value);
+        var valor = Number(ipt_valor.value);
+        for (var i = 1; i <= qtd_depositos; i++) {
+
+            if (i % 3 == 0) {
+                acumulador += (valor * 1.03)
+                msg.innerHTML += `${i}º mês: R$ ${acumulador.toFixed(2)}<br>`;
+            }
+            else {
+                acumulador += valor
+                msg.innerHTML += `${i}º mês: R$ ${acumulador.toFixed(2)}<br>`;
+            }
+
+            if (i == qtd_depositos) {
+                msg.innerHTML += `Total guardado: R$ ${acumulador.toFixed(2)}`;
+            }
+        }
+    }
+</script>
